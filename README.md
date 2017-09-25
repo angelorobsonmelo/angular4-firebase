@@ -1,12 +1,9 @@
-# SB Admin rewritten in Angular4 and Bootstrap 4
+# Projeto desenvolvido com Angular4 + Firebase
 
-Simple Dashboard Admin App built using Angular 4 and Bootstrap 4
+Crud utilizando autenticação via Firebase, utilizando também authGuard, rotas lazy e componentes de terceiros
 
-This project is a port of the famous Free Admin Bootstrap Theme [SB Admin v4.0](http://startbootstrap.com/template-overviews/sb-admin-2/) to Angular4 Theme.
 
-Powered by [StartAngular](http://startangular.com/) & [StrapUI](http://strapui.com/)
-
-## [Demo](http://rawgit.com/start-angular/SB-Admin-BS4-Angular-4/master/dist/)
+## [Demo](https://angelorobsonmelo.github.io/angular4-firebase-build/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
