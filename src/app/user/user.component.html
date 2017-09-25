@@ -1,0 +1,59 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Save User'" [icon]="'fa-save'"></app-page-header>
+
+
+    <form novalidate  #f="ngForm"  (ngSubmit)="saveUser(f)"  class="form-vertical js-form-loading" autocomplete="off">
+
+    <div class="row">
+        <div class="col-sm-4 form-group">
+            <label for="firstname" class="control-label">First Name:</label>
+            <input id="firstname" #firstname="ngModel" name="firstname" ngModel class="form-control" [(ngModel)]="user.firstname" required>
+            <p *ngIf="firstname.errors?.required && firstname.touched" class="alert-danger">
+                <span> First name is required</span>
+            </p>
+
+        </div>
+        <div class="col-sm-4 form-group">
+            <label for="lastname" class="control-label">Last name:</label>
+            <input id="lastname" #lastname="ngModel" class="form-control"  name="lastname" ngModel [(ngModel)]="user.lastname" required>
+            <p *ngIf="lastname.errors?.required && lastname.touched" class="alert-danger">
+                <span> Last name is required</span>
+            </p>
+        </div>
+
+        <div class="col-sm-4 form-group">
+            <label for="officer" class="control-label">Officer:</label>
+            <input id="officer" #officer="ngModel" name="officer" ngModel class="form-control"  [(ngModel)]="user.officer" required>
+            <p *ngIf="officer.errors?.required && officer.touched" class="alert-danger">
+                <span> Officer is required</span>
+            </p>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-sm-6 form-group">
+               <button class="btn btn-lg" [disabled]="f.invalid">
+                   <span *ngIf="key; else update">Update</span>
+                   <ng-template #update>
+                   <span #update>Create</span>
+                   </ng-template>
+               </button>
+
+                   <button class="btn btn-lg" *ngIf="key" type="button" [disabled]="f.invalid" (click)="saveUser(f, key = null)">New User</button>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="key">
+            <div class="col-sm-6 form-group">
+                <div class="col-sm-6 form-group">
+                    <a [routerLink]="['/users']" [routerLinkActive]="['router-link-active']" >
+                        <i class="btn-lg fa fa-fw fa-backward">Back</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <!-- /.row -->
+    </form>
+
+</div>
+
